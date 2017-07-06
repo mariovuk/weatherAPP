@@ -13,20 +13,60 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Stockholm"
-        android:textSize="30sp"
-        android:layout_marginBottom="77dp"
-        android:layout_above="@+id/temperature"
-        android:layout_centerHorizontal="true" />
-
+        android:layout_marginTop="81dp"
+        android:textSize="18sp"
+        android:text="Belgrade"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignStart="@+id/textView2" />
 
     <TextView
-        android:id="@+id/temperature"
+        android:id="@+id/temperature1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Temperature"
-        android:textSize="22sp"
-        android:layout_centerVertical="true"
+        android:layout_marginTop="13dp"
+        android:text="Belgrade temperature"
+        android:layout_below="@+id/textView1"
         android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="104dp"
+        android:textSize="18sp"
+        android:text="Barcelona"
+        android:layout_below="@+id/temperature1"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/temperature2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:text="Barcelona temperature"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="98dp"
+        android:textSize="18sp"
+        android:text="Stockholm"
+        android:layout_below="@+id/temperature2"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/temperature3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:textSize="16sp"
+        android:text="Stockholm temperature"
+        android:layout_below="@+id/textView3"
+        android:layout_centerHorizontal="true" />
+
 
 </RelativeLayout>
