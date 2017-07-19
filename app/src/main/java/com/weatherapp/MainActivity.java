@@ -11,10 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.TextView;
-import android.view.View.OnClickListener;
-
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -31,10 +28,7 @@ import java.net.URL;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener{
 
-
     TextView textView1;
-
-
 
     private static final String APP_ID = "b5362c203397ce801d354458c2262485";
 
@@ -120,10 +114,10 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == com.weatherapp.R.id.nav_temperature) {
-            // Handle the camera action
-        } else if (id == com.weatherapp.R.id.nav_history) {
 
-        } else if (id == com.weatherapp.R.id.nav_export) {
+        } else if (id == com.weatherapp.R.id.nav_forecast) {
+
+        } else if (id == com.weatherapp.R.id.nav_uvIndex) {
 
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(com.weatherapp.R.id.drawer_layout);
