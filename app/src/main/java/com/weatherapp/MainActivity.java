@@ -1,6 +1,7 @@
 package com.weatherapp;
 
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -55,6 +56,9 @@ public class MainActivity extends AppCompatActivity
         double lat1 = 44.7866, lon1 = 20.4489;
         double lat2 = 41.3851, lon2 = 2.1734;
         double lat3 = 59.3275, lon3 = 18.0675;
+        double lat4 = 44.8683, lon4 = 13.84806;
+        double lat5 = 45.5161, lon5 = -73.6568;
+        double lat6 = 45.3502, lon6 = 15.8805;
 
         String units = "metric";
 
@@ -75,6 +79,24 @@ public class MainActivity extends AppCompatActivity
 
         TextView textView2 = (TextView) findViewById(R.id.temperature3);
         new GetWeatherTask(textView2).execute(url3);
+
+        String url4 = String.format("http://api.openweathermap.org/data/2.5/weather?lat=%f&lon=%f&units=%s&appid=%s",
+                lat4, lon4, units, APP_ID);
+
+        TextView textView3 = (TextView) findViewById(R.id.temperature4);
+        new GetWeatherTask(textView3).execute(url4);
+
+        String url5 = String.format("http://api.openweathermap.org/data/2.5/weather?lat=%f&lon=%f&units=%s&appid=%s",
+                lat5, lon5, units, APP_ID);
+
+        TextView textView4 = (TextView) findViewById(R.id.temperature5);
+        new GetWeatherTask(textView4).execute(url5);
+
+        String url6 = String.format("http://api.openweathermap.org/data/2.5/weather?lat=%f&lon=%f&units=%s&appid=%s",
+                lat6, lon6, units, APP_ID);
+
+        TextView textView5 = (TextView) findViewById(R.id.temperature6);
+        new GetWeatherTask(textView5).execute(url6);
     }
 
     @Override
