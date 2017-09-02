@@ -13,12 +13,13 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="81dp"
         android:textSize="18sp"
         android:text="Belgrade"
+        android:textColor="@color/colorWhite"
+        android:layout_marginTop="60dp"
         android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/textView2"
-        android:layout_alignStart="@+id/textView2" />
+        android:layout_alignRight="@+id/textView5"
+        android:layout_alignEnd="@+id/textView5" />
 
     <TextView
         android:id="@+id/temperature1"
@@ -33,11 +34,13 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="104dp"
+        android:layout_marginTop="30dp"
         android:textSize="18sp"
+        android:textColor="@color/colorWhite"
         android:text="Barcelona"
         android:layout_below="@+id/temperature1"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_alignStart="@+id/textView3" />
 
     <TextView
         android:id="@+id/temperature2"
@@ -52,9 +55,10 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="98dp"
         android:textSize="18sp"
+        android:textColor="@color/colorWhite"
         android:text="Stockholm"
+        android:layout_marginTop="30dp"
         android:layout_below="@+id/temperature2"
         android:layout_centerHorizontal="true" />
 
@@ -66,6 +70,69 @@
         android:textSize="16sp"
         android:text="Stockholm temperature"
         android:layout_below="@+id/textView3"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:textSize="18sp"
+        android:textColor="@color/colorWhite"
+        android:text="Pula"
+        android:layout_below="@+id/temperature3"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/temperature4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:textSize="16sp"
+        android:text="Pula temperature"
+        android:layout_below="@+id/textView4"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:textSize="18sp"
+        android:textColor="@color/colorWhite"
+        android:text="Montreal"
+        android:layout_below="@+id/temperature4"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/temperature5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:textSize="16sp"
+        android:text="Montreal temperature"
+        android:layout_below="@+id/textView5"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:textSize="18sp"
+        android:textColor="@color/colorWhite"
+        android:text="Vrginmost"
+        android:layout_below="@+id/temperature5"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/temperature6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:textSize="16sp"
+        android:text="Vrginmost temperature"
+        android:layout_below="@+id/textView6"
         android:layout_centerHorizontal="true" />
 
 
