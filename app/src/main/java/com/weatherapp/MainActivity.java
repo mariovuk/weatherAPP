@@ -1,7 +1,5 @@
 package com.weatherapp;
 
-
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -26,8 +24,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 
-public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener{
+public class MainActivity extends AppCompatActivity {
 
     TextView textView1;
 
@@ -52,7 +49,6 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         //Code for temperature
-
         double lat1 = 44.7866, lon1 = 20.4489;
         double lat2 = 41.3851, lon2 = 2.1734;
         double lat3 = 59.3275, lon3 = 18.0675;
@@ -146,8 +142,6 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
-
 
     private class GetWeatherTask extends AsyncTask<String, Void, String> {
         private TextView textView;
