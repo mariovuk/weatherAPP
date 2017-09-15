@@ -3,6 +3,8 @@ package com.weatherapp;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -11,6 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -24,9 +27,10 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     TextView textView1;
+    DrawerLayout dLayout;
 
     private static final String APP_ID = "b5362c203397ce801d354458c2262485";
 
@@ -47,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
 
         NavigationView navigationView = (NavigationView) findViewById(com.weatherapp.R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        setNavigationDrawer();
 
         //Code for temperature
         double lat1 = 44.7866, lon1 = 20.4489;
@@ -131,13 +137,14 @@ public class MainActivity extends AppCompatActivity {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == com.weatherapp.R.id.nav_temperature) {
+        /**if (id == com.weatherapp.R.id.nav_temperature) {
 
         } else if (id == com.weatherapp.R.id.nav_forecast) {
 
         } else if (id == com.weatherapp.R.id.nav_uvIndex) {
 
         }
+         */
         DrawerLayout drawer = (DrawerLayout) findViewById(com.weatherapp.R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
@@ -181,6 +188,37 @@ public class MainActivity extends AppCompatActivity {
         protected void onPostExecute(String temp) {
             textView.setText("Current temperature: " + temp + "c");
         }
+    }
+    // ovaj kod sam unio 15.9. za navigation drawer
+    private void setNavigationDrawer() {
+        dLayout = (DrawerLayout) findViewById(R.id.drawer_layout); // initiate a DrawerLayout
+        NavigationView navView = (NavigationView) findViewById(R.id.navigation); // initiate a Navigation View
+// implement setNavigationItemSelectedListener event on NavigationView
+        navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem menuItem) {
+                Fragment frag = null; // create a Fragment Object
+                int itemId = menuItem.getItemId(); // get selected menu item's id
+// check selected menu item's id and replace a Fragment Accordingly
+                if (itemId == R.id.first) {
+                    frag = new CurrentTemperatureFragment();
+                } else if (itemId == R.id.second) {
+                    frag = new ForecastFragment();
+                } else if (itemId == R.id.third) {
+                    frag = new UvIndexFragment();
+                }
+// display a toast message with menu item's title
+               Toast.makeText(getApplicationContext(), menuItem.getTitle(), Toast.LENGTH_SHORT).show();
+                if (frag != null) {
+                    FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                    transaction.replace(R.id.frame, frag); // replace a Fragment with Frame Layout
+                    transaction.commit(); // commit the changes
+                    dLayout.closeDrawers(); // close the all open Drawer Views
+                    return true;
+                }
+                return false;
+            }
+        });
     }
 }
 
