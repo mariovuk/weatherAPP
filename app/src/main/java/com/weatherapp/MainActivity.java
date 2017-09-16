@@ -52,8 +52,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         NavigationView navigationView = (NavigationView) findViewById(com.weatherapp.R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        setNavigationDrawer();
-
         //Code for temperature
         double lat1 = 44.7866, lon1 = 20.4489;
         double lat2 = 41.3851, lon2 = 2.1734;
@@ -139,11 +137,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         /**if (id == com.weatherapp.R.id.nav_temperature) {
 
-        } else if (id == com.weatherapp.R.id.nav_forecast) {
+         } else if (id == com.weatherapp.R.id.nav_forecast) {
 
-        } else if (id == com.weatherapp.R.id.nav_uvIndex) {
+         } else if (id == com.weatherapp.R.id.nav_uvIndex) {
 
-        }
+         }
          */
         DrawerLayout drawer = (DrawerLayout) findViewById(com.weatherapp.R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -189,36 +187,5 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             textView.setText("Current temperature: " + temp + "c");
         }
     }
-    // ovaj kod sam unio 15.9. za navigation drawer
-    private void setNavigationDrawer() {
-        dLayout = (DrawerLayout) findViewById(R.id.drawer_layout); // initiate a DrawerLayout
-        NavigationView navView = (NavigationView) findViewById(R.id.navigation); // initiate a Navigation View
-// implement setNavigationItemSelectedListener event on NavigationView
-        navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(MenuItem menuItem) {
-                Fragment frag = null; // create a Fragment Object
-                int itemId = menuItem.getItemId(); // get selected menu item's id
-// check selected menu item's id and replace a Fragment Accordingly
-                if (itemId == R.id.first) {
-                    frag = new CurrentTemperatureFragment();
-                } else if (itemId == R.id.second) {
-                    frag = new ForecastFragment();
-                } else if (itemId == R.id.third) {
-                    frag = new UvIndexFragment();
-                }
-// display a toast message with menu item's title
-               Toast.makeText(getApplicationContext(), menuItem.getTitle(), Toast.LENGTH_SHORT).show();
-                if (frag != null) {
-                    FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                    transaction.replace(R.id.frame, frag); // replace a Fragment with Frame Layout
-                    transaction.commit(); // commit the changes
-                    dLayout.closeDrawers(); // close the all open Drawer Views
-                    return true;
-                }
-                return false;
-            }
-        });
-    }
-}
 
+}

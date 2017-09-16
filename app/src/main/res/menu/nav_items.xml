@@ -8,14 +8,14 @@
         <item
             android:id="@+id/first"
             android:icon="@drawable/temperature"
-            android:title="First Menu" />
+            android:title="Current temperature" />
         <item
             android:id="@+id/second"
             android:icon="@drawable/temperature2"
-            android:title="Second Menu" />
+            android:title="Forecast" />
         <item
             android:id="@+id/third"
             android:icon="@drawable/temperature3"
-            android:title="Third Menu" />
+            android:title="UV Index" />
     </group>
 </menu>
