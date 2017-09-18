@@ -4,13 +4,13 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_temperature"
-            android:title="Temperature" />
+            android:title="Curent Temperature" />
         <item
             android:id="@+id/nav_history"
-            android:title="History" />
+            android:title="Weather Forecast" />
         <item
             android:id="@+id/nav_export"
-            android:title="Export" />
+            android:title="UV Index" />
 
     </group>
 
