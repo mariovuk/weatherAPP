@@ -21,16 +21,20 @@
             android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
+            android:layout_margin="25dp"
             app:srcCompat="@drawable/weather_icon" />
 
         <EditText
             android:id="@+id/email"
             style = "@style/editText_style"
+            android:textColorHint="#C4C7CC"
+            android:hint="e-mail"
             android:inputType="textEmailAddress" />
 
         <EditText
             android:id="@+id/password"
+            android:hint="password"
+            android:textColorHint="#C4C7CC"
             style = "@style/editText_style"
             android:inputType="textPassword" />
 
