@@ -1,5 +1,6 @@
 package com.weatherapp;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -24,7 +25,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     TextView textView1;
     DrawerLayout dLayout;
@@ -38,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(com.weatherapp.R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(com.weatherapp.R.id.toolbar);
         setSupportActionBar(toolbar);
-        textView1=(TextView)findViewById(R.id.textView1);// text to show addresses
+        textView1 = (TextView) findViewById(R.id.textView1);// text to show addresses
 
         DrawerLayout drawer = (DrawerLayout) findViewById(com.weatherapp.R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -116,12 +117,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        int id = item.getItemId();
+        switch (item.getItemId()) {
+            case R.id.login:
 
-        //noinspection SimplifiableIfStatement
-        if (id == com.weatherapp.R.id.action_settings) {
-            return true;
+                Intent intent = new Intent(this, LoginActivity.class);
+                startActivity(intent);
+                return true;
         }
+
 
         return super.onOptionsItemSelected(item);
     }
@@ -132,57 +135,58 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        /**if (id == com.weatherapp.R.id.nav_temperature) {
 
-         } else if (id == com.weatherapp.R.id.nav_forecast) {
 
-         } else if (id == com.weatherapp.R.id.nav_uvIndex) {
 
-         }
-         */
-        DrawerLayout drawer = (DrawerLayout) findViewById(com.weatherapp.R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
-    }
 
-    private class GetWeatherTask extends AsyncTask<String, Void, String> {
-        private TextView textView;
 
-        public GetWeatherTask(TextView textView) {
-            this.textView = textView;
+
+            DrawerLayout drawer = (DrawerLayout) findViewById(com.weatherapp.R.id.drawer_layout);
+            drawer.closeDrawer(GravityCompat.START);
+            return true;
         }
 
-        @Override
-        protected String doInBackground(String... strings) {
-            String weather = "UNDEFINED";
-            try {
-                URL url = new URL(strings[0]);
-                HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+        private class GetWeatherTask extends AsyncTask<String, Void, String> {
+            private TextView textView;
 
-                InputStream stream = new BufferedInputStream(urlConnection.getInputStream());
-                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(stream));
-                StringBuilder builder = new StringBuilder();
-
-                String inputString;
-                while ((inputString = bufferedReader.readLine()) != null) {
-                    builder.append(inputString);
-                }
-
-                JSONObject topLevel = new JSONObject(builder.toString());
-                JSONObject main = topLevel.getJSONObject("main");
-                weather = String.valueOf(main.getDouble("temp"));
-
-                urlConnection.disconnect();
-            } catch (IOException | JSONException e) {
-                e.printStackTrace();
+            public GetWeatherTask(TextView textView) {
+                this.textView = textView;
             }
-            return weather;
+
+            @Override
+            protected String doInBackground(String... strings) {
+                String weather = "UNDEFINED";
+                try {
+                    URL url = new URL(strings[0]);
+                    HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+
+                    InputStream stream = new BufferedInputStream(urlConnection.getInputStream());
+                    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(stream));
+                    StringBuilder builder = new StringBuilder();
+
+                    String inputString;
+                    while ((inputString = bufferedReader.readLine()) != null) {
+                        builder.append(inputString);
+                    }
+
+                    JSONObject topLevel = new JSONObject(builder.toString());
+                    JSONObject main = topLevel.getJSONObject("main");
+                    weather = String.valueOf(main.getDouble("temp"));
+
+                    urlConnection.disconnect();
+                } catch (IOException | JSONException e) {
+                    e.printStackTrace();
+                }
+                return weather;
+            }
+
+            @Override
+            protected void onPostExecute(String temp) {
+                textView.setText("Current temperature: " + temp + "c");
+            }
         }
 
-        @Override
-        protected void onPostExecute(String temp) {
-            textView.setText("Current temperature: " + temp + "c");
-        }
+
     }
 
-}
+

@@ -22,15 +22,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            app:srcCompat="@android:drawable/ic_btn_speak_now" />
+            app:srcCompat="@drawable/weather_icon" />
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/email"
             style = "@style/editText_style"
             android:inputType="textEmailAddress" />
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/password"
             style = "@style/editText_style"
             android:inputType="textPassword" />
 

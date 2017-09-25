@@ -6,15 +6,15 @@
                 Menu items with icon and Title
         -->
         <item
-            android:id="@+id/first"
+            android:id="@+id/current_nav"
             android:icon="@drawable/temperature"
             android:title="Current temperature" />
         <item
-            android:id="@+id/second"
+            android:id="@+id/forecast_nav"
             android:icon="@drawable/temperature2"
             android:title="Forecast" />
         <item
-            android:id="@+id/third"
+            android:id="@+id/index_nav"
             android:icon="@drawable/temperature3"
             android:title="UV Index" />
     </group>
