@@ -21,6 +21,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         password = (EditText)findViewById(R.id.password);
     }
 
+    private void validate(String userName, String userPassword){
+        if(userName == "Admin" );
+    }
+
     @Override
     public void onClick(View v) {
 

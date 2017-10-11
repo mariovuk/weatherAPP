@@ -3,7 +3,11 @@ package com.weatherapp;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -40,6 +44,41 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Toolbar toolbar = (Toolbar) findViewById(com.weatherapp.R.id.toolbar);
         setSupportActionBar(toolbar);
         textView1 = (TextView) findViewById(R.id.textView1);// text to show addresses
+
+        //code for bottom action bar
+        BottomNavigationView bottomNavigationView = (BottomNavigationView)
+                findViewById(R.id.navigation);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener
+                (new BottomNavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                        Fragment selectedFragment = null;
+                        switch (item.getItemId()) {
+                            case R.id.action_item1:
+                                selectedFragment = ItemOneFragment.newInstance();
+                                break;
+                            case R.id.action_item2:
+                                selectedFragment = ItemTwoFragment.newInstance();
+                                break;
+                            case R.id.action_item3:
+                                selectedFragment = ItemThreeFragment.newInstance();
+                                break;
+                        }
+                        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                        transaction.replace(R.id.frame_layout, selectedFragment);
+                        transaction.commit();
+                        return true;
+                    }
+                });
+
+        //Manually displaying the first fragment - one time only
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.frame_layout, ItemOneFragment.newInstance());
+        transaction.commit();
+
+        //Used to select an item programmatically
+        //bottomNavigationView.getMenu().getItem(2).setChecked(true);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(com.weatherapp.R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -135,13 +174,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-
-
-
-
-
-
-            DrawerLayout drawer = (DrawerLayout) findViewById(com.weatherapp.R.id.drawer_layout);
+        DrawerLayout drawer = (DrawerLayout) findViewById(com.weatherapp.R.id.drawer_layout);
             drawer.closeDrawer(GravityCompat.START);
             return true;
         }
@@ -182,7 +215,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             @Override
             protected void onPostExecute(String temp) {
-                textView.setText("Current temperature: " + temp + "c");
+                textView.setText(temp + "ºC");
             }
         }
 
