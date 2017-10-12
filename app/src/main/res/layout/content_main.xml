@@ -8,257 +8,349 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="210dp"
-        android:layout_alignParentBottom="true"
         android:background="@color/colorWhite"
         android:gravity="bottom"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:weightSum="1"
-        android:id="@+id/linearLayout">
-
+        android:id="@+id/linearLayout"
+        android:layout_above="@+id/linearLayout2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
 
         <LinearLayout
-            android:layout_width="98dp"
+            android:layout_width="100dp"
             android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/textView11"
-                android:layout_width="86dp"
-                android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:textColor="@color/colorPrimaryDark"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:text="City" />
-
-            <TextView
-                android:id="@+id/textView1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:textColor="@color/colorPrimaryDark"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:text="Belgrade" />
-
-            <TextView
-                android:id="@+id/textView13"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:textColor="@color/colorPrimaryDark"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:text="Barcelona" />
-
-            <TextView
-                android:id="@+id/textView14"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:textColor="@color/colorPrimaryDark"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:text="Stockholm" />
-
-            <TextView
-                android:id="@+id/textView16"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:textColor="@color/colorPrimaryDark"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:text="Pula" />
-
-            <TextView
-                android:id="@+id/textView17"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:textColor="@color/colorPrimaryDark"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:text="Montreal" />
-
-            <TextView
-                android:id="@+id/textView18"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:textColor="@color/colorPrimaryDark"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:text="Vrginmost" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="95dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:background="@color/colorWhite"
+            android:orientation="vertical"
+            android:id="@+id/linearLayout7"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/linearLayout6"
+            android:layout_toEndOf="@+id/linearLayout6">
 
             <TextView
                 android:id="@+id/textView25"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
                 android:text="ºC"
                 android:textColor="@color/colorPrimaryDark"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-
                 android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/temperature1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:textColor="@color/colorPrimaryDark"
-                android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"
-                android:text="Belgrade temp." />
+                android:layout_marginTop="10dp"
+                android:text="Beograd temp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/temperature2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:textColor="@color/colorPrimaryDark"
-                android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"
-                android:text="Barcelona temp." />
+                android:layout_marginTop="10dp"
+                android:text="Bar temp."
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/temperature3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:textColor="@color/colorPrimaryDark"
-                android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"
-                android:text="Stockholm temp" />
+                android:layout_marginTop="10dp"
+                android:text="Sth temp"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/temperature4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:textColor="@color/colorPrimaryDark"
-                android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"
-                android:text="Pula temp." />
+                android:layout_marginTop="10dp"
+                android:text="Pula temp."
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/temperature5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:textColor="@color/colorPrimaryDark"
-                android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"
-                android:text="Montreal temp." />
+                android:layout_marginTop="10dp"
+                android:text="Mont temp."
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="14sp" />
 
             <TextView
                 android:id="@+id/temperature6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:textColor="@color/colorPrimaryDark"
-                android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"
-                android:text="Gvozd temp." />
+                android:layout_marginTop="10dp"
+                android:text="Vrg. temp."
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="14sp" />
         </LinearLayout>
+
+
+
+
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="100dp"
             android:layout_height="match_parent"
+            android:background="@drawable/gradient2"
             android:orientation="vertical"
-            android:background="@color/colorPrimary"
-            >
+            android:id="@+id/linearLayout8"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/linearLayout7"
+            android:layout_toEndOf="@+id/linearLayout7">
 
-            <LinearLayout
-                android:layout_width="211dp"
-                android:layout_height="211dp"
-                android:background="@drawable/gradient2"
-                android:orientation="vertical">
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Wind m/s"
+                android:textColor="@color/colorWhite"
+                android:textSize="16sp" />
 
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/colorWhite"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:textSize="16sp"
-                    android:text="Wind" />
+            <TextView
+                android:id="@+id/wind1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Bgd wind"
+                android:textColor="@color/colorWhite"
+                android:textSize="14sp" />
 
-                <TextView
-                    android:id="@+id/wind1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/colorWhite"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:textSize="14sp"
-                    android:text="Bgd wind" />
+            <TextView
+                android:id="@+id/wind2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="BCN wind"
+                android:textColor="@color/colorWhite"
+                android:textSize="14sp" />
 
-                <TextView
-                    android:id="@+id/wind2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/colorWhite"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:textSize="14sp"
-                    android:text="BCN wind" />
+            <TextView
+                android:id="@+id/wind3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Sth wind"
+                android:textColor="@color/colorWhite"
+                android:textSize="14sp" />
 
-                <TextView
-                    android:id="@+id/wind3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/colorWhite"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:textSize="14sp"
-                    android:text="Sth wind" />
+            <TextView
+                android:id="@+id/wind4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Pula wind"
+                android:textColor="@color/colorWhite"
+                android:textSize="14sp" />
 
-                <TextView
-                    android:id="@+id/wind4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/colorWhite"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:textSize="14sp"
-                    android:text="Pula wind" />
+            <TextView
+                android:id="@+id/wind5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Mtl wind"
+                android:textColor="@color/colorWhite"
+                android:textSize="14sp" />
 
-                <TextView
-                    android:id="@+id/wind5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/colorWhite"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:textSize="14sp"
-                    android:text="Mtl wind" />
+            <TextView
+                android:id="@+id/wind6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Gvozd wind"
+                android:textColor="@color/colorWhite"
+                android:textSize="14sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/gradient2"
+            android:orientation="vertical"
+            android:id="@+id/linearLayout6">
 
-                <TextView
-                    android:id="@+id/wind6"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/colorWhite"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:textSize="14sp"
-                    android:text="Gvozd wind" />
-            </LinearLayout>
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="86dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="City"
+                android:textColor="@color/colorWhite"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Belgrade"
+                android:textColor="@color/colorWhite"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Barcelona"
+                android:textColor="@color/colorWhite"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Stockholm"
+                android:textColor="@color/colorWhite"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Pula"
+                android:textColor="@color/colorWhite"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Montreal"
+                android:textColor="@color/colorWhite"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Vrginmost"
+                android:textColor="@color/colorWhite"
+                android:textSize="14sp" />
         </LinearLayout>
 
-    </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorWhite"
+            android:orientation="vertical"
+            android:id="@+id/linearLayout9"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/linearLayout8"
+            android:layout_toEndOf="@+id/linearLayout8">
+
+            <TextView
+                android:id="@+id/textView25"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="m/s"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/temperature1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Beograd wind"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/temperature2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Bar wind."
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/temperature3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Sth wind"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/temperature4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Pula wind."
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/temperature5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Mont wind"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/temperature6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Vrg. wind"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
 
     <ImageView
         android:id="@+id/imageView2"
@@ -274,7 +366,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_alignParentBottom="true"
-        >
+        android:id="@+id/linearLayout2">
 
         <FrameLayout
             android:id="@+id/frame_layout"
@@ -297,4 +389,5 @@
         </FrameLayout>
 
     </LinearLayout>
+
 </RelativeLayout>
