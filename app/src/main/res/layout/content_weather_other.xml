@@ -22,14 +22,16 @@
 
 
         <LinearLayout
+            android:id="@+id/linearLayout9"
             android:layout_width="100dp"
             android:layout_height="match_parent"
-            android:background="@color/colorWhite"
-            android:orientation="vertical"
-            android:id="@+id/linearLayout7"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/linearLayout6"
-            android:layout_toEndOf="@+id/linearLayout6">
+            android:layout_toEndOf="@+id/linearLayout8"
+            android:layout_toRightOf="@+id/linearLayout8"
+            android:background="@color/colorWhite"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textView25"
@@ -37,74 +39,70 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:text="Now tem."
+                android:text="m/s"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/temperature1"
+                android:id="@+id/wind1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:text="Bgd temp"
+                android:text="Beograd wind"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="14sp" />
 
             <TextView
-                android:id="@+id/temperature2"
+                android:id="@+id/wind2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:text="Bar temp."
+                android:text="Bar wind."
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="14sp" />
 
             <TextView
-                android:id="@+id/temperature3"
+                android:id="@+id/wind3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:text="Sth temp"
+                android:text="Sth wind"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="14sp" />
 
             <TextView
-                android:id="@+id/temperature4"
+                android:id="@+id/wind4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:text="Pula temp."
+                android:text="Pula wind."
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="14sp" />
 
             <TextView
-                android:id="@+id/temperature5"
+                android:id="@+id/wind5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:text="Mont temp."
+                android:text="Mont wind"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="14sp" />
 
             <TextView
-                android:id="@+id/temperature6"
+                android:id="@+id/wind6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:text="Vrg. temp."
+                android:text="Vrg. wind"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="14sp" />
         </LinearLayout>
-
-
-
-
 
         <LinearLayout
             android:layout_width="100dp"
@@ -270,92 +268,6 @@
         </LinearLayout>
 
 
-        <LinearLayout
-            android:id="@+id/linearLayout9"
-            android:layout_width="100dp"
-            android:layout_height="match_parent"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:layout_toEndOf="@+id/linearLayout8"
-            android:layout_toRightOf="@+id/linearLayout8"
-            android:background="@color/colorWhite"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/textView25"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:elevation="24dp"
-                android:text="T. max"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/tempMax1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:text="Bgd max"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="14sp" />
-
-            <TextView
-                android:id="@+id/tempMax2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:text="Bar max"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="14sp" />
-
-            <TextView
-                android:id="@+id/tempMax3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:text="Sth max"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="14sp" />
-
-            <TextView
-                android:id="@+id/tempMax4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:text="Pula max"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="14sp" />
-
-            <TextView
-                android:id="@+id/tempMax5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:text="Mont max"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="14sp" />
-
-            <TextView
-                android:id="@+id/tempMax6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:text="Vrg. max"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="14sp" />
-        </LinearLayout>
-
-
-
     </RelativeLayout>
 
     <ImageView
@@ -363,9 +275,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/weather_icon"
-        android:layout_above="@+id/linearLayout"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="78dp" />
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="21dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginTop="30dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
