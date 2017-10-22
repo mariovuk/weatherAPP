@@ -396,4 +396,49 @@
 
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="23dp"
+        android:layout_marginStart="23dp"
+        android:text="Current highest temperature:"
+        android:layout_above="@+id/cloud_pic"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="13dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="24dp"
+        android:text="Current lowest temperature:"
+        android:layout_alignBaseline="@+id/highestTemp"
+        android:layout_alignBottom="@+id/highestTemp"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignStart="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/highestTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/lowestTemp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_toEndOf="@+id/textView2"
+        android:layout_toRightOf="@+id/textView2"
+        android:text="Highest temp currently" />
+
+    <TextView
+        android:id="@+id/lowestTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/highestTemp"
+        android:layout_alignStart="@+id/highestTemp"
+        android:layout_alignTop="@+id/textView2"
+        android:text="Lowest current temp" />
+
+
 </RelativeLayout>

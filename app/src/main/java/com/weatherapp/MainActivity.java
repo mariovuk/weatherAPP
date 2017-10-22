@@ -13,11 +13,13 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -28,6 +30,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.Arrays;
+import java.util.Comparator;
 
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -176,6 +180,101 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         TextView textMax6 = (TextView) findViewById(R.id.tempMax6);
         new GetMax(textMax6).execute(url6);
+
+        temperature();
+    }
+
+    public void temperature (){
+
+        //Code for temperature
+        double lat1 = 44.7866, lon1 = 20.4489;
+        double lat2 = 41.3851, lon2 = 2.1734;
+        double lat3 = 59.3275, lon3 = 18.0675;
+        double lat4 = 44.8683, lon4 = 13.84806;
+        double lat5 = 45.5161, lon5 = -73.6568;
+        double lat6 = 45.3502, lon6 = 15.8805;
+
+        String units = "metric";
+
+        String url1 = String.format("http://api.openweathermap.org/data/2.5/weather?lat=%f&lon=%f&units=%s&appid=%s",
+                lat1, lon1, units, APP_ID);
+
+        TextView tempNow1 = (TextView) findViewById(R.id.temperature1);
+        new GetWeatherTask(tempNow1).execute(url1);
+
+        TextView textMin1 = (TextView) findViewById(R.id.tempMin1);
+        new GetMin(textMin1).execute(url1);
+
+        TextView textMax1 = (TextView) findViewById(R.id.tempMax1);
+        new GetMax(textMax1).execute(url1);
+
+        String url2 = String.format("http://api.openweathermap.org/data/2.5/weather?lat=%f&lon=%f&units=%s&appid=%s",
+                lat2, lon2, units, APP_ID);
+
+        TextView tempNow2 = (TextView) findViewById(R.id.temperature2);
+        new GetWeatherTask(tempNow2).execute(url2);
+
+        TextView textMin2 = (TextView) findViewById(R.id.tempMin2);
+        new GetMin(textMin2).execute(url2);
+
+        TextView textMax2 = (TextView) findViewById(R.id.tempMax2);
+        new GetMax(textMax2).execute(url2);
+
+        String url3 = String.format("http://api.openweathermap.org/data/2.5/weather?lat=%f&lon=%f&units=%s&appid=%s",
+                lat3, lon3, units, APP_ID);
+
+        TextView tempNow3 = (TextView) findViewById(R.id.temperature3);
+        new GetWeatherTask(tempNow3).execute(url3);
+
+        TextView textMin3 = (TextView) findViewById(R.id.tempMin3);
+        new GetMin(textMin3).execute(url3);
+
+        TextView textMax3 = (TextView) findViewById(R.id.tempMax3);
+        new GetMax(textMax3).execute(url3);
+
+        String url4 = String.format("http://api.openweathermap.org/data/2.5/weather?lat=%f&lon=%f&units=%s&appid=%s",
+                lat4, lon4, units, APP_ID);
+
+        TextView tempNow4 = (TextView) findViewById(R.id.temperature4);
+        new GetWeatherTask(tempNow4).execute(url4);
+
+        TextView textMin4 = (TextView) findViewById(R.id.tempMin4);
+        new GetMin(textMin4).execute(url4);
+
+        TextView textMax4 = (TextView) findViewById(R.id.tempMax4);
+        new GetMax(textMax4).execute(url4);
+
+        String url5 = String.format("http://api.openweathermap.org/data/2.5/weather?lat=%f&lon=%f&units=%s&appid=%s",
+                lat5, lon5, units, APP_ID);
+
+        TextView tempNow5 = (TextView) findViewById(R.id.temperature5);
+        new GetWeatherTask(tempNow5).execute(url5);
+
+        TextView textMin5 = (TextView) findViewById(R.id.tempMin5);
+        new GetMin(textMin5).execute(url5);
+
+        TextView textMax5 = (TextView) findViewById(R.id.tempMax5);
+        new GetMax(textMax5).execute(url5);
+
+        String url6 = String.format("http://api.openweathermap.org/data/2.5/weather?lat=%f&lon=%f&units=%s&appid=%s",
+                lat6, lon6, units, APP_ID);
+
+        TextView tempNow6 = (TextView) findViewById(R.id.temperature6);
+        new GetWeatherTask(tempNow6).execute(url6);
+
+        TextView textMin6 = (TextView) findViewById(R.id.tempMin6);
+        new GetMin(textMin6).execute(url6);
+
+        TextView textMax6 = (TextView) findViewById(R.id.tempMax6);
+        new GetMax(textMax6).execute(url6);
+
+        //Compare and write the lowest and the highest temperature od differentes ciudades
+
+
+
+
+
+
     }
 
     @Override
@@ -261,13 +360,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         }
 
-        //Ovo je mozda kod za wind
 
     private class GetMin extends AsyncTask<String, Void, String> {
-        private TextView textView;
+        private TextView textMin;
 
-        public GetMin(TextView textView) {
-            this.textView = textView;
+        public GetMin(TextView textMin) {
+            this.textMin = textMin;
         }
 
         @Override
@@ -299,16 +397,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         @Override
         protected void onPostExecute(String min) {
-            textView.setText(min + "ºC");
+            textMin.setText(min + "ºC");
         }
     }
 
 
     private class GetMax extends AsyncTask<String, Void, String> {
-        private TextView textView;
+        private TextView textMax;
 
-        public GetMax(TextView textView) {
-            this.textView = textView;
+        public GetMax(TextView textMax) {
+            this.textMax = textMax;
         }
 
         @Override
@@ -340,7 +438,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         @Override
         protected void onPostExecute(String max) {
-            textView.setText(max + "ºC");
+            textMax.setText(max + "ºC");
         }
     }
 
