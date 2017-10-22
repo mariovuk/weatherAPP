@@ -268,13 +268,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         TextView textMax6 = (TextView) findViewById(R.id.tempMax6);
         new GetMax(textMax6).execute(url6);
 
-        //Compare and write the lowest and the highest temperature od differentes ciudades
-
-
-
-
-
-
     }
 
     @Override
